@@ -11,7 +11,8 @@ angular.module('flatironEdit', [
 				templateUrl: 'webapp/views/list.html'
 			})
 			.when('/add/post', {
-				templateUrl: 'webapp/views/post-edit.html'
+				templateUrl: 'webapp/views/post-edit.html',
+				controller: 'postCtrl'
 			})
 			.when('edit/post/:month/:day/:year/:title', {
 				templateUrl: 'webapp/views/edit.html'

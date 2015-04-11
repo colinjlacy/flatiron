@@ -1,0 +1,11 @@
+{
+  "name": "flatiron",
+  "version": "1.0.0",
+  "description": "A flatfile CMS, which serves static JSON files over HTTP to an Angular frontend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Colin J Lacy",
+  "license": "ISC"
+}

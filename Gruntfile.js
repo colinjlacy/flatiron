@@ -5,26 +5,6 @@ module.exports = function(grunt) {
     require('jit-grunt')(grunt);
 
     grunt.initConfig({
-        concat: {
-            options: {
-                separator: ''
-            },
-            angular: {
-                src: ['app/controllers/*.js', 'app/directives/*.js', 'app/services/*.js'],
-                dest: 'app/modules.js'
-            },
-            bootstrap: {
-                src: ['bower_components/bootstrap-less/js/*.js'],
-                dest: 'js/bootstrap.js'
-            }
-        },
-        wiredep: {
-            target: {
-                src: [
-                    'index.html'
-                ]
-            }
-        },
         jshint: {
             options: {
                 curly: true,
@@ -53,7 +33,8 @@ module.exports = function(grunt) {
                     optimization: 2
                 },
                 files: {
-                    "css/site.css": "less/site.less" // destination file and source file
+                    "css/app.css": "less/app.less", // destination file and source file
+                    "css/edit.css": "less/edit.less" // destination file and source file
                 }
             }
         },
@@ -66,12 +47,12 @@ module.exports = function(grunt) {
                 }
             },
             scripts: {
-                files: ['app/*/*.js'],
-                tasks: ['concat', 'jshint']
+                files: ['edit/webapp/*/*.js', 'js/**/*.js', '!js/lib/*.js'],
+                tasks: ['jshint']
             }
         }
     });
 
-    grunt.registerTask('default', ['connect', 'less', 'concat', 'jshint', 'wiredep', 'watch']);
+    grunt.registerTask('default', ['connect', 'jshint', 'less', 'watch']);
 
 };

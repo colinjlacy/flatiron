@@ -28,20 +28,7 @@ var router = express.Router();              // get an instance of the express Ro
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.post('/post/', function(req, res) {
-	console.log(req);
-	req.checkBody('postTitle', 'Valid Post Title Required').notEmpty().isAlpha();
-	req.checkBody('postContent', 'Valid Post Content Required').notEmpty();
-	req.checkBody('postSubHeading', 'Post Subheading must be valid text').optional().isAlpha();
-
-	var insertValue;
-
-	var errors = req.validationErrors();
-	if (errors && errors.length > 0) {
-		insertValue = errors;
-	} else {
-		insertValue = {message: "success!"};
-	}
-	res.json(insertValue);
+	res.json(postInsert.validate(req));
 });
 
 // more routes for our API will happen here

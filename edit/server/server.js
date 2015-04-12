@@ -30,13 +30,13 @@ var router = express.Router();              // get an instance of the express Ro
 router.post('/post/', function(req, res) {
 	console.log(req);
 	req.checkBody('postTitle', 'Valid Post Title Required').notEmpty().isAlpha();
-	req.checkBody('postContent', 'Valid Post Content Required').notEmpty().isAlpha();
+	req.checkBody('postContent', 'Valid Post Content Required').notEmpty();
 	req.checkBody('postSubHeading', 'Post Subheading must be valid text').optional().isAlpha();
 
 	var insertValue;
 
 	var errors = req.validationErrors();
-	if (errors.length > 0) {
+	if (errors && errors.length > 0) {
 		insertValue = errors;
 	} else {
 		insertValue = {message: "success!"};

@@ -37,27 +37,30 @@ var Insert = function(req) {
 			if (err) return err;
 		});
 
+		fs.lstat(filepath, function(err, data) {
+			if (err || !data.isFile()) {
+				fs.readFile(dir + 'index.json', function(err, data) {
+					if (err) throw err;
+					var postArray = JSON.parse(data);
+					postArray.push({
+						title: postObj.title,
+						filename: postObj.filename,
+						excerpt: postObj.excerpt,
+						year: year,
+						month: month,
+						createdOn: postObj.createdOn,
+						revisedOn: postObj.revisedOn
+					});
+					fs.writeFile(dir + 'index.json', JSON.stringify(postArray), function(err) {
+						if (err) throw err;
+						return filepath;
+					});
+				});
+			}
+		});
 		fs.writeFile(filepath, JSON.stringify(postObj), function(err) {
 			if (err) throw err;
-			fs.readFile(dir + 'index.json', function(err, data) {
-				if (err) throw err;
-				var postArray = JSON.parse(data);
-				postArray.push({
-					title: postObj.title,
-					filename: postObj.filename,
-					excerpt: postObj.excerpt,
-					year: year,
-					month: month,
-					createdOn: postObj.createdOn,
-					revisedOn: postObj.revisedOn
-				});
-				fs.writeFile(dir + 'index.json', JSON.stringify(postArray), function(err) {
-					if (err) throw err;
-					return filepath;
-				});
-			});
 		});
-
 	};
 
 	this.validate = function(req) {

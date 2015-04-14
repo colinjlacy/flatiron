@@ -2,7 +2,7 @@
  * Created by colinjlacy on 4/11/15.
  */
 angular.module('flatironEdit')
-.directive('flSavePost', function($http, apiSrvc) {
+.directive('flSavePost', function(apiSrvc) {
 		return {
 			restrict: "A",
 			link: function(scope, elem) {

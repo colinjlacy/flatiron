@@ -3,7 +3,8 @@
  */
 angular.module('flatironEdit', [
 	'ngRoute',
-	'textAngular'
+	'textAngular',
+	'flApi'
 ])
 .config(function($routeProvider) {
 		$routeProvider

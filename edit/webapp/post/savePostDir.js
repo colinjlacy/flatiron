@@ -20,10 +20,10 @@ angular.module('flatironEdit')
 					}
 
 					// get content from the thing
-					postObj.postTitle = scope.postTitle;
-					postObj.postSubHeading = scope.postSubHeading;
-					postObj.postContent = scope.postContent;
-					postObj.postExcerpt = scope.postExcerpt;
+					postObj.postTitle = scope.title;
+					postObj.postSubHeading = scope.subheading;
+					postObj.postContent = scope.content;
+					postObj.postExcerpt = scope.excerpt;
 
 					apiSrvc.postData('http://localhost:8080/api/post/', postObj).then(function(res){ // todo: add URL to a config
 						console.log(res);

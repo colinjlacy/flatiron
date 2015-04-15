@@ -2,19 +2,19 @@
 	<form id="edit-form">
 		<div class="form-group">
 			<label class="control-label" for="title">Title</label>
-			<input type="text" id="title" class="form-control" ng-model="postTitle"/>
+			<input type="text" id="title" class="form-control" ng-model="title"/>
 		</div>
 		<div class="form-group">
 			<label class="control-label" for="subheading">Sub Heading</label>
-			<input type="text" id="subheading" class="form-control" ng-model="postSubHeading"/>
+			<input type="text" id="subheading" class="form-control" ng-model="subheading"/>
 		</div>
 		<div class="form-group">
 			<label class="control-label">Content</label>
-			<text-angular ng-model="postContent" name="demo-editor" ta-text-editor-class="form-control"></text-angular>
+			<text-angular ng-model="content" name="demo-editor" ta-text-editor-class="form-control"></text-angular>
 		</div>
 		<div class="form-group">
-			<label class="control-label">Content</label>
-			<textarea class="form-control" ng-model="postExcerpt"></textarea>
+			<label class="control-label">Excerpt</label>
+			<textarea class="form-control" ng-model="excerpt"></textarea>
 		</div>
 		<div class="form-group">
 			<input type="submit" class="btn btn-primary" value="Save!" fl-save-post/>

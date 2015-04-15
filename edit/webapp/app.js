@@ -12,11 +12,12 @@ angular.module('flatironEdit', [
 				templateUrl: 'webapp/views/list.html'
 			})
 			.when('/add/post', {
-				templateUrl: 'webapp/views/post-edit.html',
+				templateUrl: 'webapp/post/edit.html',
 				controller: 'postCtrl'
 			})
-			.when('edit/post/:month/:day/:year/:title', {
-				templateUrl: 'webapp/views/edit.html'
+			.when('/edit/post/:year/:month/:filename', {
+				templateUrl: 'webapp/post/edit.html',
+				controller: 'postCtrl'
 			})
 			.otherwise({
 				templateUrl: 'webapp/views/list.html'

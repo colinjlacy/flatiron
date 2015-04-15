@@ -1,0 +1,18 @@
+<div class="col-sm-12">
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<td>Post Title</td>
+			<td>Published On</td>
+			<td>Revised</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="post in postIndex track by $index">
+			<td>{{post.title}}</td>
+			<td>{{post.createdOn}}</td>
+			<td>{{post.revisedOn}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>

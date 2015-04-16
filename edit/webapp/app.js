@@ -15,8 +15,12 @@ angular.module('flatironEdit', [
 				templateUrl: 'webapp/post/edit.html',
 				controller: 'postCtrl'
 			})
+			.when('/edit/post', {
+				templateUrl: 'webapp/post/list/list.html',
+				controller: 'postCtrl'
+			})
 			.when('/edit/post/:year/:month/:filename', {
-				templateUrl: 'webapp/post/edit.html',
+				templateUrl: 'webapp/post/edit/edit.html',
 				controller: 'postCtrl'
 			})
 			.otherwise({

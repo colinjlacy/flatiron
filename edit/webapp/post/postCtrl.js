@@ -4,13 +4,12 @@
 angular.module('flatironEdit')
 .controller('postCtrl', function($scope, $route, $routeParams, apiSrvc) {
 
-		$scope.url = function() {
+		 var url = function() {
 			return '../archive/posts/' + $routeParams.year + '/' + $routeParams.month + '/' + $routeParams.filename + '.json';
 		};
 
 		$scope.getPostData = function() {
-			console.log($scope.url());
-			apiSrvc.getData($scope.url()).then(function (res) {
+			apiSrvc.getData(url()).then(function (res) {
 				var keys = Object.keys(res);
 				for(var i = 0; i < keys.length; i++) {
 					$scope[keys[i]] = res[keys[i]];
@@ -28,10 +27,8 @@ angular.module('flatironEdit')
 		attempts at fixing this are below
 		 */
 
-		$scope.$on('$locationChangeSuccess', function() {
-			console.log($routeParams);
-			$route.reload();
-			$route.updateParams();
+		$scope.$on('$locationChangeStart', function() {
+			$scope.$apply();
 			$scope.getPostData();
 		});
 	});

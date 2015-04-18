@@ -8,11 +8,8 @@ angular.module('flatironEdit', [
 ])
 .config(function($routeProvider) {
 		$routeProvider
-			.when('/', {
-				templateUrl: 'webapp/views/list.html'
-			})
 			.when('/add/post', {
-				templateUrl: 'webapp/post/edit.html',
+				templateUrl: 'webapp/post/edit/edit.html',
 				controller: 'postCtrl'
 			})
 			.when('/edit/post', {
@@ -24,7 +21,7 @@ angular.module('flatironEdit', [
 				controller: 'postCtrl'
 			})
 			.otherwise({
-				templateUrl: 'webapp/views/list.html'
+				redirectTo: '/edit/post'
 			})
 	})
 	.controller("initCtrl", function() {

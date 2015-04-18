@@ -14,11 +14,11 @@ var Insert = function(req) {
 	};
 
 	this.buildObj = function(req) {
-		this.postObj.title = req.body.postTitle;
+		this.postObj.title = req.body.title;
 		this.postObj.filename = this.urlStringify(this.postObj.title).toLowerCase();
-		this.postObj.subheading = req.body.postSubHeading;
-		this.postObj.content = req.body.postContent;
-		this.postObj.excerpt = req.body.postExcerpt;
+		this.postObj.subheading = req.body.subHeading;
+		this.postObj.content = req.body.content;
+		this.postObj.excerpt = req.body.excerpt;
 		this.postObj.createdOn = req.body.createdOn;
 		this.postObj.revisedOn = req.body.revisedOn;
 	};
@@ -64,10 +64,10 @@ var Insert = function(req) {
 	};
 
 	this.validate = function(req) {
-		req.checkBody('postTitle', 'Valid Post Title Required').notEmpty();
-		req.checkBody('postContent', 'Valid Post Content Required').notEmpty();
-		req.checkBody('postSubHeading', 'Post Subheading must be valid text').optional();
-		req.checkBody('postExcerpt', 'Post Excerpt must be valid text').optional();
+		req.checkBody('title', 'Valid Post Title Required').notEmpty();
+		req.checkBody('content', 'Valid Post Content Required').notEmpty();
+		req.checkBody('subHeading', 'Post Subheading must be valid text').optional();
+		req.checkBody('excerpt', 'Post Excerpt must be valid text').optional();
 
 		var errors = req.validationErrors();
 		if (errors && errors.length > 0) {

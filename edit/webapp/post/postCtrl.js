@@ -33,13 +33,4 @@ angular.module('flatironEdit')
 			$scope.getIndex();
 		}
 
-		/*
-		KNOWN BUG:
-		changing routes does not update the view when navigating between posts. E.g. changing the browser URL from one post to another does nothing!!
-		attempts at fixing this are below
-		 */
-
-		//$scope.$on('$locationChangeStart', function() {
-		//	$scope.getPostData();
-		//});
 	});

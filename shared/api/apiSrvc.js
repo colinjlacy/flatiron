@@ -11,13 +11,13 @@
 angular.module('flApi', [])
 	.service('apiSrvc', function($http, $q) {
 
-		// this creates an object that will be expecting a set of asynchronous data
-		var returnData = $q.defer();
-
 		return {
 
 			// creating the GET call
 			getData: function (url, args) {
+
+				// this creates an object that will be expecting a set of asynchronous data
+				var returnData = $q.defer();
 
 				// here, we make the call to the database
 				$http({
@@ -41,6 +41,9 @@ angular.module('flApi', [])
 
 			// creating the POST call
 			postData: function (url, data) {
+
+				// this creates an object that will be expecting a set of asynchronous data
+				var returnData = $q.defer();
 
 				// here, we make the call input into the database
 				$http({

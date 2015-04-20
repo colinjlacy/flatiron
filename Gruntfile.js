@@ -53,6 +53,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['connect', 'jshint', 'less', 'watch']);
+    grunt.registerTask('default', ['jshint', 'less', 'watch']);
 
 };

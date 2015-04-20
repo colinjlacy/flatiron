@@ -9,7 +9,7 @@
 		</thead>
 		<tbody>
 		<tr ng-repeat="post in index track by $index">
-			<td><a href="#/edit/post/{{post.year}}/{{post.month}}/{{post.filename}}">{{post.title}}</a></td>
+			<td><a href="#/post/edit/{{post.year}}/{{post.month}}/{{post.filename}}">{{post.title}}</a></td>
 			<td>{{post.createdOn | date : medium}}</td>
 			<td>{{post.revisedOn | date : medium}}</td>
 		</tr>

@@ -5,11 +5,11 @@
 	<title></title>
 
 	<!--styles-->
-	<link rel="stylesheet" href="css/app.css"/>
-	<link rel="stylesheet" href="css/edit.css"/>
-	<link rel="stylesheet" href="css/textAngular.css"/>
-	<link rel="stylesheet" href="css/font-awesome.css"/>
-	<link rel="stylesheet" href="css/prettify.css"/>
+	<link rel="stylesheet" href="assets/css/app.css"/>
+	<link rel="stylesheet" href="assets/css/edit.css"/>
+	<link rel="stylesheet" href="assets/css/textAngular.css"/>
+	<link rel="stylesheet" href="assets/css/font-awesome.css"/>
+	<link rel="stylesheet" href="assets/css/prettify.css"/>
 </head>
 <body ng-controller="initCtrl">
 
@@ -40,21 +40,26 @@
 
 
 <!--libs-->
-<script src="shared/lib/jquery.min.js"></script>
-<script src="shared/lib/bootstrap.min.js"></script>
-<script src="shared/lib/prettify.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/prettify.js"></script>
 
 <!--angular libs-->
-<script src="shared/lib/angular.min.js"></script>
-<script src="shared/lib/angular-route.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-route.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js"></script>
-<script src="./shared/lib/textAngular-rangy.min.js"></script>
-<script src="./shared/lib/textAngular-sanitize.min.js"></script>
-<script src="./shared/lib/textAngular.min.js"></script>
+<script src="lib/textAngular-rangy.min.js"></script>
+<script src="lib/textAngular-sanitize.min.js"></script>
+<script src="lib/textAngular.min.js"></script>
 
 <!--application-->
 <script src="webapp/app.js"></script>
-<script src="shared/api/apiSrvc.js"></script>
-<script src="webapp/post/postCtrl.js"></script>
+<script src="webapp/api/api.js"></script>
+
+<!--post-->
+<script src="webapp/post/post.js"></script>
+
+<!--edit-->
+<script src="webapp/post/edit/edit.js"></script>
 </body>
 </html>

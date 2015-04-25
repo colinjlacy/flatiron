@@ -5,12 +5,14 @@ angular.module('flatiron', [
 	'ngRoute',
 	'ngSanitize',
 	'textAngular',
-	'flApi'
+	'flatiron.api',
+	'flatiron.edit',
+	'flatiron.post'
 ])
 .config(function($routeProvider) {
 		$routeProvider
-			.when('/', {
-				templateUrl: 'webapp/post/posts/postList.html',
+			.when('/post', {
+				templateUrl: 'webapp/list/list.html',
 				controller: 'postCtrl'
 			})
 			.when('/:year/:month/:filename', {
@@ -22,7 +24,7 @@ angular.module('flatiron', [
 				controller: 'postCtrl'
 			})
 			.when('/post/edit', {
-				templateUrl: 'webapp/post/edit/list.html',
+				templateUrl: 'webapp/list/list.html',
 				controller: 'postCtrl'
 			})
 			.when('/post/edit/:year/:month/:filename', {
@@ -30,7 +32,7 @@ angular.module('flatiron', [
 				controller: 'postCtrl'
 			})
 			.otherwise({
-				redirectTo: '/'
+				redirectTo: '/post'
 			})
 	})
 	.controller("initCtrl", function() {

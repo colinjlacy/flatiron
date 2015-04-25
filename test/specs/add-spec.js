@@ -11,7 +11,7 @@ describe('Add Post', function() {
 	var enterTitle = "Test Title!" + new Date().getTime();
 
 	it('should load the textAngular directive', function() {
-		browser.get('http://localhost:3000/edit/#/edit/post');
+		browser.get('http://localhost:8080/#/post/edit');
 		template.clickNav(2);
 		expect(editor.toolbar.isPresent()).toBe(true);
 	});
@@ -22,7 +22,7 @@ describe('Add Post', function() {
 		editor.enterContent('This is my Test Content!!');
 		editor.clickSubmit();
 
-		browser.get('http://localhost:3000/edit/#/edit/post');
+		browser.get('http://localhost:8080/#/post/edit');
 
 		postlist.posts.count().then(function(count) {
 			var postTitle = postlist.getPostTitle(count - 1);
@@ -31,7 +31,7 @@ describe('Add Post', function() {
 	});
 
 	it('should work end-to-end', function() {
-		browser.get('http://localhost:3000/');
+		browser.get('http://localhost:8080/#/post');
 		postlist.posts.count().then(function(count) {
 			var postTitle = postlist.getPostTitle(count - 1);
 			expect(postTitle).toEqual(enterTitle);

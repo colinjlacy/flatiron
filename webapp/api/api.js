@@ -8,7 +8,7 @@
 
  This particular service is going to be used to make API calls.
  */
-angular.module('flApi', [])
+angular.module('flatiron.api', [])
 	.service('apiSrvc', function($http, $q) {
 
 		return {

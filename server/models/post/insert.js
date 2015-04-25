@@ -24,7 +24,7 @@ var Insert = function(req) {
 	};
 
 	this.createFile = function(obj) { // todo: abstract so that any post type can use this function
-		var dir = '../../archive/posts/', // todo: add this to a config
+		var dir = './archive/posts/', // todo: add this to a config
 			date = new Date(this.postObj.createdOn),
 			year = date.getFullYear(),
 			month = date.getMonth() + 1,

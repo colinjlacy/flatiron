@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
-var postInsert = require('./edit/models/post/insert.js');
+var postInsert = require('./server/models/post/insert.js');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -35,8 +35,7 @@ app.get('/', function(req, res){
 	};
 	res.sendFile('/index.html', options);
 });
-
-router.post('/api/post/', function(req, res) {
+app.post('/api/post/', function(req, res) {
 	res.json(postInsert.validate(req));
 });
 
@@ -49,4 +48,3 @@ router.post('/api/post/', function(req, res) {
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-console.log('Listening on port ' + port);

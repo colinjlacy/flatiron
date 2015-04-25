@@ -1,7 +1,7 @@
 /**
  * Created by colinjlacy on 4/11/15.
  */
-angular.module('flatiron')
+angular.module('flatiron.post', [])
 .controller('postCtrl', function($scope, $route, $routeParams, apiSrvc) {
 
 		 var url = function() {

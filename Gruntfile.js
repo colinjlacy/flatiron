@@ -33,8 +33,8 @@ module.exports = function(grunt) {
                     optimization: 2
                 },
                 files: {
-                    "css/app.css": "less/app.less", // destination file and source file
-                    "css/edit.css": "less/edit.less" // destination file and source file
+                    "assets/css/app.css": "less/app.less", // destination file and source file
+                    "assets/css/edit.css": "less/edit.less" // destination file and source file
                 }
             }
         },

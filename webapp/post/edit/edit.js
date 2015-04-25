@@ -1,7 +1,7 @@
 /**
  * Created by colinjlacy on 4/11/15.
  */
-angular.module('flatiron')
+angular.module('flatiron.edit', [])
 .directive('flSavePost', function(apiSrvc) {
 		return {
 			restrict: "A",
@@ -25,6 +25,7 @@ angular.module('flatiron')
 					postObj.content = scope.content;
 					postObj.excerpt = scope.excerpt;
 
+					console.log(postObj);
 					apiSrvc.postData('http://localhost:8080/api/post/', postObj).then(function(res){ // todo: add URL to a config
 						console.log(res);
 					});

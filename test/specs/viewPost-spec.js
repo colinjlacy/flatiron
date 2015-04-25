@@ -8,7 +8,7 @@ var postlist = require('../page_objects/list-obj.js');
 
 describe('Post List', function() {
 	it('should work end-to-end', function() {
-		browser.get('http://localhost:3000/');
+		browser.get('http://localhost:8080/');
 
 		var title = postlist.getPostTitle(0);
 		postlist.viewPost(0);

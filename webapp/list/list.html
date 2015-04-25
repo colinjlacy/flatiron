@@ -5,13 +5,15 @@
 			<td>Post Title</td>
 			<td>Published On</td>
 			<td>Revised</td>
+			<td></td>
 		</tr>
 		</thead>
 		<tbody>
 		<tr ng-repeat="post in index track by $index">
-			<td><a href="#/post/edit/{{post.year}}/{{post.month}}/{{post.filename}}">{{post.title}}</a></td>
+			<td><a href="#/{{post.year}}/{{post.month}}/{{post.filename}}" class="post-link">{{post.title}}</a></td>
 			<td>{{post.createdOn | date : medium}}</td>
 			<td>{{post.revisedOn | date : medium}}</td>
+			<td><a class="btn btn-sm btn-default fa fa-pencil" href="#/post/edit/{{post.year}}/{{post.month}}/{{post.filename}}"></a></td>
 		</tr>
 		</tbody>
 	</table>

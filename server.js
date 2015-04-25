@@ -48,3 +48,4 @@ app.post('/api/post/', function(req, res) {
 // START THE SERVER
 // =============================================================================
 app.listen(port);
+console.log('Server working on port 8080');

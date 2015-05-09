@@ -1,7 +1,9 @@
 /**
  * Created by colinjlacy on 4/11/15.
  */
-angular.module('flatiron.edit', [])
+angular.module('flatiron.edit', [
+
+])
 .directive('fiSavePost', function(apiSrvc) {
 		return {
 			restrict: "A",

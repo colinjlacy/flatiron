@@ -6,6 +6,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var postInsert = require('./server/models/post/insert.js');
+var fiDelete = require('./server/delete/delete.js');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -37,6 +38,10 @@ app.get('/', function(req, res){
 });
 app.post('/api/post/', function(req, res) {
 	res.json(postInsert.validate(req));
+});
+app.delete('/api/post/:year/:month/:filename', function(req, res) {
+	fiDelete.post(req.params);
+	res.send("Post has been deleted.");
 });
 
 // more routes for our API will happen here

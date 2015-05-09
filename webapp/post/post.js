@@ -1,7 +1,10 @@
 /**
  * Created by colinjlacy on 4/11/15.
  */
-angular.module('flatiron.post', [])
+angular.module('flatiron.post', [
+	'flatiron.delete',
+	'flatiron.api'
+])
 .controller('postCtrl', function($scope, $route, $routeParams, apiSrvc) {
 
 		 var url = function() {
@@ -12,7 +15,6 @@ angular.module('flatiron.post', [])
 
 		$scope.getPostData = function() {
 			apiSrvc.getData(url()).then(function (res) {
-				console.log(res);
 				var keys = Object.keys(res);
 				for(var i = 0; i < keys.length; i++) {
 					$scope[keys[i]] = res[keys[i]];
@@ -23,7 +25,14 @@ angular.module('flatiron.post', [])
 		$scope.getIndex = function() {
 			apiSrvc.getData(url()).then(function (res) {
 				$scope.index = res;
-				console.log(res);
+				$scope.categories = [];
+				for (var i = 0; i < $scope.index.length; i++) {
+					angular.forEach($scope.index[i].categories, function(value, index) {
+						if(!value.isIn($scope.categories)) {
+							$scope.categories.push(value);
+						}
+					});
+				}
 			});
 		};
 

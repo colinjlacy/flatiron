@@ -5,9 +5,11 @@ angular.module('flatiron', [
 	'ngRoute',
 	'ngSanitize',
 	'textAngular',
+	//'ui.bootstrap',
 	'flatiron.api',
 	'flatiron.edit',
-	'flatiron.post'
+	'flatiron.post',
+	'flatiron.delete'
 ])
 .config(function($routeProvider) {
 		$routeProvider

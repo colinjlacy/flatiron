@@ -6,6 +6,7 @@
 			<td>Published On</td>
 			<td>Revised</td>
 			<td></td>
+			<td></td>
 		</tr>
 		</thead>
 		<tbody>
@@ -14,6 +15,7 @@
 			<td>{{post.createdOn | date : medium}}</td>
 			<td>{{post.revisedOn | date : medium}}</td>
 			<td><a class="btn btn-sm btn-default fa fa-pencil" href="#/post/edit/{{post.year}}/{{post.month}}/{{post.filename}}"></a></td>
+			<td><button class="btn btn-sm btn-default fa fa-trash" fi-delete="{{post}}" fi-delete-data="index" fi-delete-index="{{$index}}"></button></td>
 		</tr>
 		</tbody>
 	</table>

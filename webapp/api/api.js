@@ -63,6 +63,31 @@ angular.module('flatiron.api', [])
 					});
 				// now we return the promise of the API call - whether successful or not
 				return returnData.promise;
+			},
+
+			// creating the POST call
+			deleteData: function (url) {
+
+				// this creates an object that will be expecting a set of asynchronous data
+				var returnData = $q.defer();
+
+				// here, we make the call input into the database
+				$http({
+					url: url,
+					method: 'DELETE'
+				})
+					// the success method fires if the backend successfully returned data
+					.success(function (data) {
+						// we'll set the data that's returned to the object expecting asynchronous data.
+						returnData.resolve(data);
+					})
+					// if the backend returned an error, we pass the error to the client instead.
+					.error(function (error) {
+						console.log(error);
+						returnData.reject();
+					});
+				// now we return the promise of the API call - whether successful or not
+				return returnData.promise;
 			}
 		}
 	});
